@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morse Code Translator</title>
-    <link rel="stylesheet" href="./styles/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Morse Code Translator</title>
 </head>
 <body>
-    <header>
-        <h1>REMEMBER TO RUN LIVE SERVER</h1>
-    </header>
-    <main>
-        <h1>Morse Code Tanslator</h1>
-        <h2>LOOK AT THE CONSOLE FOR TESTS</h2>
-    </main>
-    <footer>
-        THIS IS A FOOTER
-    </footer>
+  <header>
+    <h1>Morse Code Translator<h1>
+
+    <p>Get in contact to discuss how we can enhance your projects.</p>
+  </header>
+  <main>
+    <form class="contact-form" onsubmit="return false">
+        <!-- translation text area 3 rows 20 cols -->
+        <label for="translation">text to translate:</label>
+        <textarea name="translation" class="translation" id="translation" cols="20" rows="3" required placeholder="leave your text here"></textarea>
+        <!-- clear button -->
+        <input type="reset" value="Clear Form">
+        <!-- submit button -->
+        <!-- <input type="submit" value="Send translation">     -->
+        <button class="button" id="submitBtn">Submit Translation</button>
+    </form>
+  </main>
+<footer>
+  <div class="form-title-section">
+    <h3>Translations</h3>
+    <button class="button" id="clearTranslationsBtn">Clear translations</button>
+  </div>
+  <div class="form-wrapper">
+    <dl id="currentTranslations">
+  
+    </dl>
+  </div>
+</footer>
+<script type="module" src="./scripts/app.js"></script>
 </body>
-<!-- <script type="module" src="./scripts/morseCode.js"></script> -->
-<script type="module" src="./scripts/app.js" defer></script>
 </html>
