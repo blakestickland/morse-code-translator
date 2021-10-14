@@ -1,0 +1,16 @@
+@use "../partials/typography";
+@use "../partials/palette";
+
+header {
+  margin: 0;
+  height: 40px;
+  background-color: palette.$header-bg-color;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+
+  font-family: typography.$primary-font-family;
+}
+
