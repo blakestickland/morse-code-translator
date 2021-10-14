@@ -1,16 +1,15 @@
 import {morseCodeList} from "./morseCodeList.js";
 
-export const englishToMorse = (translation) => {
-    console.log("from engToMorse", translation);
+export const englishToMorse = (userInput) => {
+  console.log("from engToMorse", userInput);
 
-    const morseArray = translation
-        .toLowerCase()
-        .split("")
-        .map(character => morseCodeList[character]);
+  const morseArray = userInput
+    .toLowerCase()
+    .split("")
+    .map((character) => morseCodeList[character]);
 
+  // add a space after each letter
+  const morseString = morseArray.join(" ");
 
-    const morseString = morseArray.join(" "); // add a space after each letter
-
-    console.log("morse", morseString);
-    return morseString;
+  return morseString;
 };
