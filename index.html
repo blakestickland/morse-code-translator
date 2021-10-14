@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morse Code Translator</title>
-    <link rel="stylesheet" href="./styles/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morse Code Translator</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" 
+    rel="stylesheet"
+  >
 </head>
 <body>
-    <header>
-        <h1>REMEMBER TO RUN LIVE SERVER</h1>
-    </header>
-    <main>
-        <h1>Morse Code Tanslator</h1>
-        <h2>LOOK AT THE CONSOLE FOR TESTS</h2>
-    </main>
-    <footer>
-        THIS IS A FOOTER
-    </footer>
-</body>
-<!-- <script type="module" src="./scripts/morseCode.js"></script> -->
+  <header>
+    <h1>Morse Code Translator<h1>
+
+  </header>
+  <main>
+    <div class="container">
+      <h2>Type in either English text or Morse code and see the translation below.</h2>
+      <form class="contact-form form" onsubmit="return false">
+          <!-- translation text area 3 rows 20 cols -->
+          <!-- <label for="translation">text to translate:</label> -->
+          <textarea 
+            name="translation" 
+            class="translation form__text-area" 
+            id="translation" 
+            cols="40" 
+            rows="3" 
+            required 
+            placeholder="leave your text here">
+          </textarea>
+          <!-- clear button -->
+          <input class="button" type="reset" value="Clear Form">
+          <button class="button" id="submitBtn">Submit Translation</button>
+      </form>
+      <div class="form-title-section">
+        <h3>Translations</h3>
+        <button class="button" id="clearTranslationsBtn">
+          Clear translations
+        </button>
+      </div>
+      <div class="form-wrapper">
+        <dl id="currentTranslations">
+      
+        </dl>
+      </div>
+
+    </div>
+  </main>
 <script type="module" src="./scripts/app.js" defer></script>
+</body>
 </html>
