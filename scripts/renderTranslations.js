@@ -1,5 +1,5 @@
 
-export const renderTranslations = (translatedText) => {
+export const renderTranslations = () => {
   let currentTranslations = [];
   let storedTranslations = window.sessionStorage.getItem("translations");
   if (storedTranslations) {
