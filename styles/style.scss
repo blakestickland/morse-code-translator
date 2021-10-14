@@ -1,0 +1,34 @@
+@use "./partials/breakpoints";
+@use "./partials/devices";
+@use "./partials/typography";
+@use "./partials/palette";
+
+@use "./modules/form.scss";
+@use "./modules/button.scss";
+@use "./modules/header.scss";
+
+
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    text-align: center;
+    
+    background-color: papayawhip;
+    font-style: typography.$primary-font-family;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  // flex-wrap: wrap;
+  // justify-content: center;
+  align-items: center;
+
+  font-family: typography.$primary-font-family;
+}
