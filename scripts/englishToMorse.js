@@ -1,8 +1,10 @@
 import {morseCodeList} from "./morseCodeList.js";
 
 export const englishToMorse = (userInput) => {
-  console.log("from engToMorse", userInput);
-
+  // should throw error if no arguments
+  if (userInput === undefined) {
+    throw new Error("No args found");
+  }
   const morseArray = userInput
     .toLowerCase()
     .split("")

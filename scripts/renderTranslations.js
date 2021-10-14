@@ -10,9 +10,12 @@ export const renderTranslations = () => {
     let listItem = "";
     const currentTranslation = currentTranslations[i];
     
-    listItem += `<dd>${currentTranslation.englishText}</dd>`;
-    listItem += `<dd>${currentTranslation.morseCode}</dd>`;
+    listItem += `<dd class="english">${currentTranslation.englishText}</dd>`;
+    listItem += `<dd class="morse">${currentTranslation.morseCode}</dd>`;
     listItem += `<br />`;
+    // const translationDiv = document.createElement("div");
+    // translationDiv.setAttribute("class", "translationDiv");
+    // translationDiv.appendChild()
     listItems.push(listItem);
   }
   console.log(currentTranslations);
