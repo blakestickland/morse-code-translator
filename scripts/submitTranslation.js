@@ -1,4 +1,5 @@
 import { renderTranslations } from "./renderTranslations.js";
+import { englishToMorse } from "./englishToMorse.js";
 
   // create function to run on form submit
 export const submitTranslation = async () => {
@@ -8,9 +9,13 @@ export const submitTranslation = async () => {
       // create variables to store the form data; one per field
       const translation = document.getElementById("translation").value;
       
+      // translate english text to morse code
+      const morseTranslation = englishToMorse(translation);
+      
       // store the form data in an object
       const translationObject = {
-        translation
+        englishText: translation,
+        morseCode: morseTranslation
       };
 
       // create varibale for current translations; it will be an array
@@ -29,6 +34,5 @@ export const submitTranslation = async () => {
       currentTranslations.push(translationObject);
       window.sessionStorage.setItem("translations", JSON.stringify(currentTranslations));
 
-
-      renderTranslations();
+      renderTranslations(morseTranslation);
     };
