@@ -14,4 +14,41 @@ xdescribe("Test cases to for function which checks if input is English text or m
     expect(morseToEnglish("..--.. / --..--")).toMatch("? ,");
   });
 
+
+  it("should handle special characters", () => {
+    expect(morseToEnglish("-.-.--")).toBe("!");
+    expect(morseToEnglish("..--..")).toBe("?");
+    expect(morseToEnglish(".-...")).toBe("&");
+    expect(morseToEnglish(".--.-.")).toBe("@");
+  });
+
+  it("should handle single characters", () => {
+    expect(morseToEnglish(".-")).toBe("a");
+    expect(morseToEnglish("-..")).toBe("d");
+    expect(morseToEnglish("--..")).toBe("z");
+  });
+
+  it("should handle numbers", () => {
+    expect(morseToEnglish("-----")).toBe("0");
+    expect(morseToEnglish(".....")).toBe("5");
+    expect(morseToEnglish("----.")).toBe("9");
+  });
+
+  it("should handle periods or full stops", () => {
+    expect(morseToEnglish(".-.-.-")).toBe(".");
+  });
+
+  it("should handle commas", () => {
+    expect(morseToEnglish("--..--")).toBe(",");
+  });
+
+  it("should handle spaces", () => {
+    expect(morseToEnglish(".... .. / .... ..")).toBe("hi hi");
+    expect(morseToEnglish("... --- ... / .... ..")).toBe("sos hi");
+  });
+
+  it("should handle a mix of alphanumeric characters and symbols", () => {
+    expect(morseToEnglish(".... --..-- .. .-.-.-")).toBe("h,i.");
+    expect(morseToEnglish("... ----- --- -.-.-- ...")).toBe("s0o!s");
+  });
 });
